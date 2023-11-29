@@ -22,15 +22,16 @@ const Countries = () => {
     <div>
       <h1>Country Name & Currency </h1>
       <ul>
-        {countries.map((country, index) => (
+        {countries.map((countryData, index) => (
+          
           <li key={index}>
-            <p>Country: {country.name.common}</p>
+            <p>Country: {countryData.name.common}</p>
             
-            {country.currencies ? (
+            {countryData.currencies ? (
               <ul>
-                {Object.keys(country.currencies).map((currencyCode, index) => (
+                {Object.keys(countryData.currencies).map((currencyData, index) => (
                   <li key={index}>
-                    Name: {country.currencies[currencyCode].name} | Currency: {currencyCode} |  Symbol: {country.currencies[currencyCode].symbol}
+                    Name: {countryData.currencies[currencyData].name} | Currency: {currencyData} |  Symbol: {countryData.currencies[currencyData].symbol}
                   </li>
                 ))}
               </ul>
